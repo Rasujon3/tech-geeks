@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./BlogDetails.css";
 import { BsChevronLeft } from "react-icons/bs";
@@ -10,7 +10,6 @@ const BlogDetails = () => {
   const [blogs] = useContext(blogContext);
 
   const blog = blogs.find((blog) => blog._id == id);
-  // console.log(blog);
 
   return (
     <>
