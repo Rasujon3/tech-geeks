@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./BlogDetails.css";
 import { BsChevronLeft } from "react-icons/bs";
+import { blogContext } from "../../App";
 
 const BlogDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [blog, setBlog] = useState({});
+  const [blogs] = useContext(blogContext);
 
-  useEffect(() => {
-    const url = `https://retro-tech-talks.herokuapp.com/getBlog/${id}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setBlog(data));
-  }, [id]);
+  const blog = blogs.find((blog) => blog._id == id);
+  // console.log(blog);
 
   return (
     <>
