@@ -1,13 +1,21 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./BlogDetails.css";
+import { BsChevronLeft } from "react-icons/bs";
 
 const BlogDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   return (
-    <div className="header-gradient">
-      <h1>Blog Details: {id}</h1>
-    </div>
+    <>
+      <div className="header-gradient" />
+      <div>
+        <button className="back-button" onClick={() => navigate(-1)}>
+          <BsChevronLeft />
+          <p>back</p>
+        </button>
+      </div>
+    </>
   );
 };
 
