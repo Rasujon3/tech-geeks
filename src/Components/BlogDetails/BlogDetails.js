@@ -4,7 +4,6 @@ import "./BlogDetails.css";
 
 const BlogDetails = () => {
   const { id } = useParams();
-  console.log(id);
   return (
     <div className="header-gradient">
       <h1>Blog Details: {id}</h1>
